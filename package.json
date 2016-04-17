@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "devDependencies": {
+    "electron-prebuilt": "^0.37.6"
+  }
+}
