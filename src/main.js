@@ -17,7 +17,7 @@ app.on('ready', function() {
     }
   });
 
-  mainWindow.loadURL('file://' + __dirname + '/index.html');
+  mainWindow.loadURL('file://' + __dirname + '/html/index.html');
 
   mainWindow.on('closed', function() {
     mainWindow = null;
