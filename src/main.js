@@ -10,11 +10,7 @@ app.on('window-all-closes', function() {
 
 app.on('ready', function() {
   mainWindow = new BrowserWindow({
-    width:  1200,
-    height: 600,
-    webPreferences: {
-      'nodeIntegration': false
-    }
+    center: true,
   });
 
   mainWindow.loadURL('file://' + __dirname + '/html/index.html');
