@@ -5,6 +5,15 @@ webView.addEventListener('did-finish-load', function() {
   this.insertCSS('a:visited {color: blue !important}');
   this.executeJavaScript(
     (function(){
+      $(window).keydown(function(event) {
+        if (event.ctrlKey) {
+          if (event.keyCode === 82) { // R
+            location.reload();
+            return false;
+          }
+        }
+      });
+
       $('.ProfileAvatar-image').css('border', 'green 5px solid');
       $('a').css(
         {
@@ -13,7 +22,9 @@ webView.addEventListener('did-finish-load', function() {
         }
       );
     }).
-    toString().replace(/function\s*\(\)\{/, "").
-    replace(/}$/,"").trim()
+    toString().
+    replace(/function\s*\(\)\{/, "").
+    replace(/}$/,"").
+    trim()
   );
 });
