@@ -28,3 +28,7 @@ webView.addEventListener('did-finish-load', function() {
     trim()
   );
 });
+
+webView.addEventListener('new-window', function(event) {
+  window.open(event.url);
+});
