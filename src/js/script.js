@@ -21,6 +21,10 @@ webView.addEventListener('did-finish-load', function() {
           color: '#333'
         }
       );
+      $('a.js-user-profile-link').click(function() {
+        window.open($(this).attr('href'));
+        return false;
+      });
     }).
     toString().
     replace(/function\s*\(\)\{/, "").
@@ -30,5 +34,9 @@ webView.addEventListener('did-finish-load', function() {
 });
 
 webView.addEventListener('new-window', function(event) {
-  this.loadURL(event.url);
+  if (event.disposition === 'new-window') {
+    window.open(event.url);
+  } else {
+    this.loadURL(event.url);
+  }
 });
