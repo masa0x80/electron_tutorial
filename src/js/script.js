@@ -30,5 +30,5 @@ webView.addEventListener('did-finish-load', function() {
 });
 
 webView.addEventListener('new-window', function(event) {
-  window.open(event.url);
+  this.loadURL(event.url);
 });
