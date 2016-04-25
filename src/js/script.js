@@ -33,9 +33,10 @@ webView.addEventListener('did-finish-load', function() {
   );
 });
 
+const shell = require('shell');
 webView.addEventListener('new-window', function(event) {
   if (event.disposition === 'new-window') {
-    window.open(event.url);
+    shell.openExternal(event.url);
   } else {
     this.loadURL(event.url);
   }
